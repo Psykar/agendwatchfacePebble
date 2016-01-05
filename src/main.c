@@ -846,6 +846,9 @@ void click_config_provider(void *context) {
 void handle_init(void) {
 	//Init window
 	window = window_create();
+#ifdef PBL_SDK_2
+	window_set_fullscreen(window, true);
+#endif
 	window_stack_push(window, true);
  	window_set_background_color(window, GColorBlack);
 	root_layer = layer_create(GRect(0,0,1,1));
